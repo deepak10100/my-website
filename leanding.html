@@ -1,0 +1,132 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+ <body>
+  <nav class=" shadow-md p-5 bg-amber-200 flex justify-between items-center ">
+    <div>
+      <h2 class=" text-2xl font-bold">My Logo</h2>
+    </div>
+    <div>
+      <ul class="  hidden md:flex">
+        <li class=" hover:bg-amber-900 rounded-md px-5 py-1 hover:text-amber-50"><a href="/">Home</a></li>
+        <li class="  hover:bg-amber-900 rounded-md px-5 py-1 hover:text-amber-50"><a href="./Note.html">Note App</a></li>
+        <li class="  hover:bg-amber-900 rounded-md px-5 py-1 hover:text-amber-50"><a href="./ProductPage.html">Product Page</a></li>
+        <li class="  hover:bg-amber-900 rounded-md px-5 py-1 hover:text-amber-50"><a href="./time.html">Time</a></li>
+        <li class="  hover:bg-amber-900 rounded-md px-5 py-1 hover:text-amber-50"><a href="./todo.html">Todo App</a></li>
+        <li class="  hover:bg-amber-900 rounded-md px-5 py-1 hover:text-amber-50"><a href="./newCard.html">New Card</a></li>
+      </ul>
+    </div>
+     <button class="cursor-pointer block md:hidden duration-300" onclick="menu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+<div class=" hidden p-1 nav-dialog inset-0 fixed bg-amber-200 md:hidden transition duration-150 ease-in-out ">
+   <div class="flex justify-between p-4">
+    <h2 class=" text-2xl font-bold">My Logo</h2>
+  <button class="cursor-pointer block md:hidden" onclick="menu()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+   </div>
+      <ul class=" md:hidden transition duration-150 ease-in-out ">
+        <li class="  hover:bg-amber-500 rounded-sm px-5 mx-1 py-1 hover:text-amber-50"><a href="/">Home</a></li>
+        <li class="  hover:bg-amber-500 rounded-sm px-5 mx-1 py-1 hover:text-amber-50"><a href="./Note.html">Note App</a></li>
+        <li class="  hover:bg-amber-500 rounded-sm px-5  mx-1 py-1 hover:text-amber-50"><a href="./ProductPage.html">Product Page</a></li>
+        <li class="  hover:bg-amber-500 rounded-sm px-5  mx-1 py-1 hover:text-amber-50"><a href="./time.html">Time</a></li>
+        <li class="  hover:bg-amber-500 rounded-sm px-5  mx-1 py-1 hover:text-amber-50"><a href="./todo.html">Todo App</a></li>
+        <li class="  hover:bg-amber-500 rounded-sm px-5  mx-1 py-1 hover:text-amber-50"><a href="./newCard.html">New Card</a></li>
+      </ul>
+     
+</div>
+    
+      
+   
+
+
+
+
+  </nav>
+
+  <main class=" m-10">
+    <section>
+      <div class=" flex flex-wrap gap-1 items-center justify-center">
+      <div class="shadow-md hover:shadow-lg hover:cursor-pointer hover:duration-300 m-5 bg-amber-100 max-w-sm p-5 rounded-md">
+        <img class= " w-full h-52 object-cover rounded-md" src="https://picsum.photos/200" alt="" srcset="">
+        <h1 class=" py-1 text-2xl font-bold">Card Title</h1>
+        <p>Yeh ek responsive card ka example hai.</p>
+        <button class=" p-2 my-5 rounded-md cursor-pointer bg-amber-300">Read More</button>
+      </div>
+      <div class="shadow-md hover:shadow-lg hover:cursor-pointer hover:duration-300 m-5 bg-amber-100 max-w-sm p-5 rounded-md">
+        <img class= " w-full h-52 object-cover rounded-md" src="https://picsum.photos/200" alt="" srcset="">
+        <h1 class=" py-1 text-2xl font-bold">Card Title</h1>
+        <p>Yeh ek responsive card ka example hai.</p>
+        <button class=" p-2 my-5 rounded-md cursor-pointer bg-amber-300">Read More</button>
+      </div>
+      <div class="shadow-md hover:shadow-lg hover:cursor-pointer hover:duration-300 m-5 bg-amber-100 max-w-sm p-5 rounded-md">
+        <img class= " w-full h-52 object-cover rounded-md" src="https://picsum.photos/200" alt="" srcset="">
+        <h1 class=" py-1 text-2xl font-bold">Card Title</h1>
+        <p>Yeh ek responsive card ka example hai.</p>
+        <button class=" p-2 my-5 rounded-md cursor-pointer bg-amber-300">Read More</button>
+      </div>
+      <div class="shadow-md hover:shadow-lg hover:cursor-pointer hover:duration-300 m-5 bg-amber-100 max-w-sm p-5 rounded-md">
+        <img class= " w-full h-52 object-cover rounded-md" src="https://picsum.photos/200" alt="" srcset="">
+        <h1 class=" py-1 text-2xl font-bold">Card Title</h1>
+        <p>Yeh ek responsive card ka example hai.</p>
+        <button class=" p-2 my-5 rounded-md cursor-pointer bg-amber-300">Read More</button>
+      </div>
+
+```
+  </div>
+    </section>
+    <section>
+  <div class="  shadow-md text-center max-w-4xl  bg-amber-50 p-5 m-auto">
+    <h1 class=" text-2xl font-bold">Contact Us</h1>
+    <form action="" class=" place-items-center grid grid-cols-1 md:grid-cols-2 gap-x-2" method="get">
+      <input class=" w-full border-2 border-gray-300 p-2 focus:outline-amber-300 my-4" type="text" placeholder="Your Name">
+      <input class=" w-full border-2 border-gray-300 p-2 focus:outline-amber-300 my-4" type="text" placeholder="Your Email">
+      <input class=" w-full border-2 border-gray-300 p-2 focus:outline-amber-300 my-4" type="text" placeholder="Your Password">
+      <input class=" w-full border-2 border-gray-300 p-2 focus:outline-amber-300 my-4" type="text" placeholder="Your Username">
+      <textarea rows="5" class="md:col-span-2 w-full border-2 border-gray-300 p-2 focus:outline-amber-300 my-4" name="" id=""></textarea>
+      <button class=" md:col-span-2 w-40 cursor-pointer p-2 bg-amber-300 my-4">Send Message</button>
+    </form>
+  </div>
+    </section>
+
+  </main>
+  <footer >
+    <div class=" bg-amber-400 p-5 flex justify-between items-center flex-col md:flex-row">
+      <div class=" max-w-md text-center">
+      <h1 class=" text-2xl font-bold ">Company Name</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, praesentium.</p>
+    </div>
+    <div class=" max-w-md text-center">
+      <h1 class=" text-2xl font-bold">Usefull Links</h1>
+      <ul class=" text-center">
+        <li>Home</li>
+        <li>Todo App</li>
+        <li>Crud App</li>
+        <li>Note App</li>
+        <li>Product Page</li>
+      </ul>
+    </div>
+    <div class=" max-w-md text-center">
+      <h1 class=" text-2xl font-bold">Address</h1>
+      <p> Email: Deepak@gmail.com</p>
+      <p> Mobile No: 8810247229</p>
+    </div>
+    </div>
+    <p class=" text-center  bg-amber-400 font-bold p-2">© 2025 MyCompany. All rights reserved.</p>
+  </footer>
+  <script>
+    let navdialog = document.querySelector('.nav-dialog')
+    function menu(){
+      navdialog.classList.toggle('hidden')
+    }
+  </script>
+ </body>
+</html>
+

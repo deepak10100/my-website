@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      background-color: azure;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .container{
+      background-color: black;
+      color: white;
+      padding: 10px 30px;
+      border-radius: 10px;
+    }
+    h1{
+      font-size: 50px;
+    }
+    @media (width <= 40rem) { 
+      body{
+        h1{
+          font-size: 25px;
+        }
+      }
+    }
+
+    header{
+      display: flex;
+      flex-direction: row;
+    }
+  </style>
+</head>
+<body>
+ <header>
+   <h1>Digital Clock</h1>
+ </header>
+  <div class="container">
+    <h1 id="clock">00:00:00 AM</h1>
+  </div>
+  <script>
+    setInterval(()=>{
+    let newDate = new Date()
+    let hour = newDate.getHours()
+    let minutes = newDate.getMinutes()
+    let second = newDate.getSeconds()
+    let session = 'AM'
+    if(hour>=12){
+      session="PM"
+    }
+    hour= hour%12
+    hour = hour?hour:12
+    hour = (hour<10)?`0${hour}`:hour
+    minutes = (minutes<10)?`0${minutes}`:minutes
+    second = (second<10)?`0${second}`:second
+    console.log(hour,minutes,second)
+    document.getElementById('clock').innerHTML=`${hour}: ${minutes}: ${second} ${session}`
+    },1000)
+  </script>
+</body>
+</html>

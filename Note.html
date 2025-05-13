@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f0f2f5;
+    }
+    .Card{
+      background-color: white;
+      
+      width: 400px;
+      text-align: center;
+      padding: 20px;
+      border-radius: 7px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+ 
+  li{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    border-bottom: 1px solid gray;
+  }
+    ul .list{
+      list-style: none;
+    }
+    .card h1{
+     padding: 10px 0;
+    }
+    input{
+      width: 70%;
+      padding: 10px 10px;
+       border-radius: 7px;
+       border: 1px solid grey;
+    }
+    #addbtn{
+      padding: 10px;
+      border-radius: 7px;
+      border: none;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+    .deletebtn{
+      padding: 7px;
+      border-radius: 7px;
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    .complete{
+      text-decoration: line-through;
+    }
+   @media (width <= 300rem) { 
+    #addbtn{
+      margin-top: 10px;
+    }
+    body{
+      padding: 10px;
+    }
+   }
+  </style>
+</head>
+<body>
+  <div class="Card">
+    <h1>Note's</h1>
+    <input id="textadd" type="text" placeholder="Enter the task">
+    <button id="addbtn">Add Task</button>
+    <ul class="tasklist">
+      
+    </ul>
+  </div>
+  <script>
+    let addbtn = document.getElementById('addbtn')
+    let ullist = document.querySelector('.tasklist')
+
+    addbtn.addEventListener('click',function(){
+      let inputValue = document.getElementById('textadd').value
+      console.log(inputValue)
+
+      let li = document.createElement('li')
+      li.textContent=inputValue
+      li.style.cursor="pointer"
+      ullist.appendChild(li)
+      let deletebutton = document.createElement('button')
+      deletebutton.textContent='Delete'
+      deletebutton.classList.add('deletebtn')
+      li.appendChild(deletebutton)
+      li.addEventListener('click',function(){
+        li.classList.toggle('complete')
+        
+      })
+    deletebutton.addEventListener('click',()=>{
+      li.remove()
+    })
+    document.getElementById('textadd').value = ''
+    })
+    document.getElementById('textadd').addEventListener('keypress',function(e){
+      if(e.key =="Enter"){
+        addbtn.click()
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .done{
+      text-decoration: line-through;
+    }
+    .container{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    input{
+      padding: 10px 30px;
+      border-radius: 7px;
+      border: none;
+      border: 1px solid gray;
+    }
+    button{
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: green;
+      color: white;
+      border-radius: 3px;
+      border: none;
+    }
+    
+   .edit{
+    padding-left: 20px;
+    cursor: pointer;
+   }
+   ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   }
+    ul li{
+      list-style: none;
+      background-color: rgb(194, 243, 194);
+     padding: 13px 50px;
+     border-left: 5px solid green;
+     margin-left: 10px;
+     margin-bottom: 20px;
+      width: 2  00px;
+      overflow:auto;
+     word-wrap: break-word;
+    }
+    .delete{
+      padding-left: 30px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Todo App</h1>
+    <input type="text" id="inputTask">
+  <button id="btn">Add Task</button>
+   <ul id="list">
+
+  </ul>
+  </div>
+ 
+</body>
+<script>
+    let tasks =[]
+let btn = document.getElementById('btn')
+
+window.addEventListener('DOMContentLoaded',()=>{
+  let savedata = localStorage.getItem('task')
+  if (savedata) {
+    tasks= JSON.parse(savedata)
+    displayData()
+  }
+})
+
+btn.addEventListener('click',function () {
+  let inputTask = document.getElementById('inputTask').value
+  tasks.push(inputTask)
+  savedData()
+})
+
+function displayData() {
+  let list = document.getElementById('list')
+  list.innerHTML=""
+  tasks.forEach((task , index) => {
+    let li = document.createElement('li')
+    li.textContent = task
+    let span = document.createElement('span')
+    span.classList.add('edit')
+    span.innerHTML='❌'
+    span.addEventListener('click',function () {
+      tasks.splice(index, 1)
+      savedData()
+    })
+    let spandone = document.createElement('span')
+    spandone.innerHTML='&#9998;'
+    spandone.classList.add('delete')
+    spandone.style.cursor="pointer"
+    spandone.addEventListener('click',function () {
+      let newTask = prompt('Enter the task', task)
+      tasks[index]=newTask
+      savedData()
+    })
+    li.appendChild(spandone)
+    li.appendChild(span)
+    list.appendChild(li)
+  });
+}
+
+function savedData() {
+  localStorage.setItem('task',JSON.stringify(tasks))
+  displayData()
+}
+
+
+</script>
+</html>
